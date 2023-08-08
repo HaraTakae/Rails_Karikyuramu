@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sample1App</title>
+    <title>Sample1AppDemo</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -28,6 +28,9 @@
       </ul>
     </nav>
     <main>
+      <%= flash.each do |message_type, message| %>
+       <div class="flash-message <%= message_type %>"><%= message %></div>
+      <% end %>
     <%= yield %>
     </main>
 
